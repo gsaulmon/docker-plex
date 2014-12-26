@@ -1,4 +1,4 @@
-FROM fedora
+FROM fedora:20
 
 ENV PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR /config/Library/Application Support
 ENV PLEX_MEDIA_SERVER_HOME /usr/lib/plexmediaserver

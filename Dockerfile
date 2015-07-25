@@ -11,7 +11,7 @@ ENV LANG en_US.UTF-8
 RUN yum update -y \
         && yum clean all \
 	&& /bin/mkdir -p "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}" \
-        && yum localinstall -y https://downloads.plex.tv/plex-media-server/0.9.11.7.803-87d0708/plexmediaserver-0.9.11.7.803-87d0708.x86_64.rpm || :
+        && yum localinstall -y https://downloads.plex.tv/plex-media-server/0.9.12.4.1192-9a47d21/plexmediaserver-0.9.12.4.1192-9a47d21.x86_64.rpm || :
 
 VOLUME /config
 VOLUME /data

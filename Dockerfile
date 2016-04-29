@@ -1,4 +1,4 @@
-FROM fedora:20
+FROM fedora:23
 
 ENV PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR /config/Library/Application Support
 ENV PLEX_MEDIA_SERVER_HOME /usr/lib/plexmediaserver
@@ -8,10 +8,11 @@ ENV LD_LIBRARY_PATH /usr/lib/plexmediaserver
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
-RUN yum update -y \
-        && yum clean all \
-	&& /bin/mkdir -p "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}" \
-        && yum localinstall -y https://downloads.plex.tv/plex-media-server/0.9.15.6.1714-7be11e1/plexmediaserver-0.9.15.6.1714-7be11e1.x86_64.rpm || :
+RUN dnf update -y \
+        && dnf install -y nodejs wget tar \
+        && dnf clean all \
+	      && /bin/mkdir -p "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}" \
+        && dnf install -y https://downloads.plex.tv/plex-media-server/0.9.16.6.1993-5089475/plexmediaserver-0.9.16.6.1993-5089475.x86_64.rpm || :
 
 VOLUME /config
 VOLUME /data

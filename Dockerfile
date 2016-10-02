@@ -12,7 +12,7 @@ RUN dnf update -y \
         && dnf install -y nodejs wget tar \
         && dnf clean all \
 	      && /bin/mkdir -p "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}" \
-        && dnf install -y https://downloads.plex.tv/plex-media-server/1.0.3.2461-35f0caa/plexmediaserver-1.0.3.2461-35f0caa.x86_64.rpm || :
+        && dnf install -y https://downloads.plex.tv/plex-media-server/1.1.4.2757-24ffd60/plexmediaserver-1.1.4.2757-24ffd60.x86_64.rpm || :
 
 VOLUME /config
 VOLUME /data
